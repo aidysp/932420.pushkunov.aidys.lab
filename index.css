@@ -81,12 +81,12 @@ img {
   background-color: #8c4333;
 }
 
-/* Исправление №3: Добавлено посещенное состояние для ссылок навигации */
+
 .nav-list a:visited {
   color: #e8dec9;
 }
 
-/* Исправление №3: Добавлен фокус для ссылок меню */
+
 .nav-list a:focus {
   outline: 2px solid #fbf9f5;
   outline-offset: 2px;
