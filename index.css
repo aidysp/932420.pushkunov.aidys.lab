@@ -81,11 +81,9 @@ img {
   background-color: #8c4333;
 }
 
-
 .nav-list a:visited {
   color: #e8dec9;
 }
-
 
 .nav-list a:focus {
   outline: 2px solid #fbf9f5;
@@ -115,7 +113,6 @@ img {
   flex-wrap: wrap;
   gap: 20px;
 }
-
 .epoch-card {
   flex: 1 1 calc(33.333% - 14px); 
   border: 1px solid #d9c5b2;
@@ -195,7 +192,7 @@ img {
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
   border-color: #8c4333;
-  box-shadow: 0 0 0 3px rgba(140, 67, 51, 0.2);
+  box-shadow: 0 0 0 3px rgba(140, 67, 51, 0.3);
 }
 
 .form-group input::placeholder, .form-group textarea::placeholder {
@@ -226,7 +223,7 @@ img {
 
 .submit-btn:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(74, 44, 42, 0.4);
+  box-shadow: 0 0 0 3px rgba(74, 44, 42, 0.5);
 }
 
 .sidebar-info {
@@ -241,16 +238,16 @@ img {
   padding: 15px;
   margin-top: 40px;
 }
-
 @media (max-width: 912px) {
   .epoch-card {
     flex: 1 1 calc(50% - 10px);
   }
   
   .grid-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
+
 
 @media (max-width: 600px) {
   .header-container {
@@ -267,6 +264,7 @@ img {
     flex-direction: column;
     text-align: center;
   }
+
 
   .epoch-card {
     flex: 1 1 100%; 
