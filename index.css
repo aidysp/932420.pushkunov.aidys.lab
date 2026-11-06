@@ -29,6 +29,7 @@ img {
   border: 1px solid #e8dec9;
   border-radius: 8px;
 }
+
 .main-header {
   background-color: #4a2c2a;
   color: #fbf9f5;
@@ -73,11 +74,22 @@ img {
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, outline 0.1s;
 }
 
 .nav-list a:hover {
   background-color: #8c4333;
+}
+
+/* Исправление №3: Добавлено посещенное состояние для ссылок навигации */
+.nav-list a:visited {
+  color: #e8dec9;
+}
+
+/* Исправление №3: Добавлен фокус для ссылок меню */
+.nav-list a:focus {
+  outline: 2px solid #fbf9f5;
+  outline-offset: 2px;
 }
 
 .profile-container {
@@ -177,6 +189,17 @@ img {
   border: 1px solid #d9c5b2;
   border-radius: 4px;
   font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: #8c4333;
+  box-shadow: 0 0 0 3px rgba(140, 67, 51, 0.2);
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+  color: #6b6b6b;
 }
 
 .form-group textarea {
@@ -194,10 +217,16 @@ img {
   border-radius: 4px;
   align-self: flex-start;
   font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.2s;
 }
 
 .submit-btn:hover {
   background-color: #8c4333;
+}
+
+.submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 44, 42, 0.4);
 }
 
 .sidebar-info {
@@ -215,9 +244,11 @@ img {
 
 @media (max-width: 912px) {
   .epoch-card {
-    flex: 1 1 calc(50% - 10px); 
-    .grid-container {
-    grid-template-columns: repeat(2, 1fr); 
+    flex: 1 1 calc(50% - 10px);
+  }
+  
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -226,9 +257,9 @@ img {
     flex-direction: column;
   }
   
+
   .nav-list {
-    flex-direction: column; 
-    align-items: center;
+    justify-content: center;
     gap: 10px;
   }
 
@@ -249,5 +280,4 @@ img {
     width: 100%;
   }
 }
-
 
