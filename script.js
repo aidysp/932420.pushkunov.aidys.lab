@@ -1,55 +1,67 @@
-const studentName = prompt("Введите ваше имя: ");
 
-if (studentName && studentName.trim() !== "") {
-  alert(`Привет,  ${studentName}! Добро пожаловать на сайт историка-реконструктора.`); 
+let userName = prompt("Введите ваше имя:");
+
+
+if (!userName || userName.trim() === "") {
+    userName = "Гость";
 }
 
-const artifactAges = [150, 450, 1200, 2500, 3200, 800, 5000];
+
+alert(`Привет, ${userName}! Добро пожаловать на сайт историка-реконструктора.`);
+
+
+const artifactAges =;
+
 
 function findMax(ages) {
-  return Math.max(...ages);
+    return Math.max(...ages);
 }
 
 function filterAncientArtifacts(ages) {
-  return ages.filter(age => age > 1000);
+    return ages.filter(age => age > 1000);
 }
 
 function calculateSum(ages) {
-  return ages.reduce((sum, age) => sum + age, 0);
+    return ages.reduce((sum, age) => sum + age, 0);
 }
 
+
+function analyzeYoungArtifacts(ages) {
+    let count = 0;
+
+    for (let i = 0; i < ages.length; i++) {
+        if (ages[i] <= 300) {
+            count++;
+        }
+    }
+    
+    const share = (count / ages.length) * 100;
+    
+    return {
+        count: count,
+        share: share
+    };
+}
+
+
+const maxAge = findMax(artifactAges);
 const ancientArtifacts = filterAncientArtifacts(artifactAges);
 const totalAge = calculateSum(artifactAges);
 const averageAge = totalAge / artifactAges.length;
-const maxAge = findMax(artifactAges);
+const youngResults = analyzeYoungArtifacts(artifactAges);
 
-let youngCount = 0;
 
-for (let i = 0; i < artifactAges.length; i++) {
-  if (artifactAges[i] <= 300) {
-    youngCount++;
-  }
+alert(`Средний возраст – ${averageAge.toFixed(1)} лет, ${ancientArtifacts.length} артефактов – древние.`);
+
+
+console.log("Исходный массив возрастов артефактов:", artifactAges);
+console.log("Древние артефакты (старше 1000 лет):", ancientArtifacts);
+console.log("Суммарный возраст всех находок:", totalAge);
+console.log("Максимальный возраст артефакта:", maxAge);
+console.log("Количество молодых артефактов (≤ 300 лет):", youngResults.count);
+console.log("Доля молодых артефактов от общего числа:", youngResults.share.toFixed(1) + "%");
+
+if (maxAge > 3000) {
+    console.log("Среди находок есть по-настоящему древние артефакты!");
 }
-
-
-const youngPercentage = (youngCount / artifactAges.length) * 100;
-
-
-alert(
-  `Средний возраст артефактов - ${averageAge.toFixed(1)} лет. \n` +
-  `Количество древних артефактов - ${ancientArtifacts.length}.`
-);
-
-console.log("Возраст артефактов:", artifactAges);
-console.log("Древние артефакты старше 1000 лет:", ancientArtifacts);
-console.log("Сумма возрастов:", totalAge);
-console.log("Максимальный возраст:", maxAge);
-console.log("Количество молодых артефактов:", youngCount);
-console.log("Доля молодых артефактов:", youngPercentage.toFixed(1) + "%");
-
-
-if (maxAge > 300) {
-  console.log("Среди находок есть по-настоящему древние артефакты!");
-}
-
 
