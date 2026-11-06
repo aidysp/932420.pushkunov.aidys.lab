@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeBtn = document.getElementById("toggle-theme-btn");
     const toggleTimelineBtn = document.getElementById("toggle-timeline-btn");
     const addEventBtn = document.getElementById("add-event-btn");
-    const timelineContainer = querySelector(".timeline-container");
-    const timelineSection = querySelector(".timeline-section");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineSection = document.querySelector(".timeline-section");
 
 
     if (!themeBtn || !toggleTimelineBtn || !addEventBtn || !timelineContainer || !timelineSection) {
@@ -66,15 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         renderEventCard(newEvent.date, newEvent.text, true);
     });
-
+  
    
-    
-   
-    function querySelector(selector) {
-        return document.querySelector(selector);
-    }
-
-
     function renderEventCard(date, text, shouldSave) {
 
         const card = document.createElement("article");
