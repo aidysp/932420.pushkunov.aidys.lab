@@ -3,35 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Историк и реконструктор - Страница о себе</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Историк и реконструктор — Пушкунов Айдыс</title>
+    <link rel="stylesheet" href="style.css">
     
+
     <style>
         footer {
-            font-family: 'Georgia', serif;
-            color: var(--accent-color);
             margin-top: 40px;
-            padding-top: 20px;
+            padding-top: 15px;
             border-top: 1px dashed var(--accent-color);
-            font-style: italic;
+            font-family: var(--font-main);
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+
     <div class="paper-container">
-        
+           <div class="historical-seal">Летопись Сибири</div>
+
         <header>
             <h1>Пушкунов Айдыс</h1>
             <p class="subtitle">Историк-исследователь и реконструктор сибирской древности</p>
-            
-            <div class="historical-seal">Летопись</div>
+            <div class="img-wrapper">
+              <img src="avatar.png" alt="Портрет реконструктора Пушкунова Айдыса" style="filter: sepia(0.5);" width="200" height="200">
+            </div>
         </header>
 
         <main>
-            <div class="img-wrapper">
-                <img src="./images/avatar.png" alt="Портрет реконструктора" style="filter: sepia(0.5); max-width: 100%; height: auto;">
-            </div>
-
             <section class="skills-section">
                 <h2>Навыки</h2>
                 <ul>
@@ -42,45 +43,44 @@
                 </ul>
             </section>
 
-            <section>
+            <section class="projects-section">
                 <h2>Проекты</h2>
                 <ol>
-                    <li><a href="#">Оторок князей телеутов</a> — детальное воссоздание оборонительного комплекса и быта ставки телеутских правителей XVII века.</li>
-                    <li><a href="#">Комплекс вооружения кочевника Южной Сибири</a> — материальная реконструкция кожаного ламеллярного доспеха и лука теленгитского воина.</li>
-                    <li><a href="#">Торговые пути «Землицы Телеут»</a> — интерактивная карта экономических и дипломатических связей улуса с Русским царством и Джунгарским ханством.</li>
-                    <li><a href="#">Этнографический костюм кочевых пазырыкцев</a> — экспериментальный проект по окрашиванию шерсти натуральными красителями и пошиву кафтанов.</li>
+                    <li><a href="#project1">Оторок князей телеутов</a> — детальное воссоздание оборонительного комплекса и быта ставки телеутских правителей XVII века.</li>
+                    <li><a href="#project2">Комплекс вооружения кочевника Южной Сибири</a> — материальная реконструкция кожаного ламеллярного доспеха и лука теленгитского воина.</li>
+                    <li><a href="#project3">Торговые пути «Землицы Телеут»</a> — интерактивная карта экономических и дипломатических связей улуса с Русским царством.</li>
+                    <li><a href="#project4">Этнографический костюм кочевых пазырыкцев</a> — экспериментальный проект по окрашиванию шерсти натуральными красителями.</li>
                 </ol>
             </section>
 
             <section class="form-section">
                 <h2>Связаться с исследователем</h2>
-                <form action="#" method="post" class="contact-form">
+                <form class="contact-form" action="#" method="post">
                     <div class="form-group">
                         <label for="name">Имя:</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" placeholder="Иван Иванович" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Сообщение:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Ваш вопрос или предложение по реконструкции..." required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Отправить запрос</button>
                 </form>
             </section>
-
-            <section>
-                <h3>Увлекающий период</h3>
-                <p><strong>Теленгитский улус (Телеутское княжество)</strong> — уникальное государственное образование кочевников в Южной Сибири в XVII–XVIII веках. Меня восхищает их дипломатическая гибкость, самобытная военная культура («белые калмыки») и то, как они балансировали между геополитическими гигантами того времени.</p>
-            </section>
         </main>
+
+        <aside>
+            <h3>Увлекающий период</h3>
+            <p><strong>Теленгитский улус (Телеутское княжество)</strong> — уникальное государственное образование кочевников в Южной Сибири в XVII–XVIII веках. Меня восхищает их дипломатическая гибкость, самобытная военная культура («белые калмыки») и то, как они балансировали между геополитическими гигантами того времени.</p>
+        </aside>
 
         <footer>
             <p>© Пушкунов Айдыс, 2026. Историческая реконструкция Сибири.</p>
         </footer>
-        
     </div>
 
 </body>
