@@ -1,8 +1,8 @@
 :root {
-    --main-color: #c05a46;
-    --accent-color: #4a2c2a;
-    --bg-paper: #f4ead4;
-    --text-color: #2b1a19;
+    --main-color: #c05a46;       /* Терракотовый */
+    --accent-color: #4a2c2a;     /* Темно-коричневый */
+    --bg-paper: #f4ead4;         /* Базовый цвет пергамента */
+    --text-color: #2b1a19;       /* Темный контрастный текст */
     --font-main: 'Georgia', serif;
 }
 
@@ -17,18 +17,23 @@ body {
     justify-content: center;
 }
 
+/* Исправление №4: Реалистичный эффект старой бумаги с шумом и пятнами */
 .paper-container {
     background-color: var(--bg-paper);
     background-image: 
-        radial-gradient(circle at 30% 20%, rgba(210, 180, 140, 0.2) 0%, transparent 40%),
-        radial-gradient(circle at 75% 60%, rgba(139, 69, 19, 0.1) 0%, transparent 35%);
+
+        repeating-radial-gradient(rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 4px),
+
+        radial-gradient(circle at 30% 20%, rgba(210, 180, 140, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 75% 60%, rgba(139, 69, 19, 0.15) 0%, transparent 35%);
+    background-size: 6px 6px, 100% 100%, 100% 100%;
+    
     max-width: 800px;
     width: 100%;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     border: 1px solid #d7c5a0;
-    
     position: relative; 
 }
 
@@ -39,6 +44,24 @@ h1, h2, h3 {
 h1 {
     border-bottom: 2px solid var(--main-color);
     padding-bottom: 10px;
+}
+
+.subtitle {
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.img-wrapper {
+    text-align: center;
+    margin: 20px 0;
 }
 
 
@@ -54,26 +77,21 @@ h1 {
     border: 3px double var(--main-color);
     color: var(--main-color);
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
     transform: rotate(15deg);
-    opacity: 0.7;
+    opacity: 0.6;
     user-select: none;
-}
-
-
-.img-wrapper {
-    text-align: center;
-    margin: 20px 0;
+    font-weight: bold;
 }
 
 
 a {
     color: var(--main-color);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    border-bottom: 1px solid transparent;
 }
-
 
 a:visited {
     color: #8c4335;
@@ -82,9 +100,16 @@ a:visited {
 
 a:hover {
     color: var(--accent-color);
-    text-decoration: underline dashed var(--accent-color) 2px;
+    border-bottom: 2px dashed var(--accent-color);
 }
 
+
+a:focus {
+    outline: 2px solid var(--main-color);
+    outline-offset: 3px;
+    background-color: rgba(192, 90, 70, 0.1);
+    border-radius: 2px;
+}
 
 a:active, .submit-btn:active {
     transform: scale(0.98);
@@ -92,20 +117,23 @@ a:active, .submit-btn:active {
 
 
 .contact-form {
-    background: rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 25px;
+    border-radius: 6px;
     border: 1px solid rgba(74, 44, 42, 0.2);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 .contact-form:focus-within {
     border-color: var(--accent-color);
+
+    border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+
     box-shadow: 
-        0 0 15px rgba(74, 44, 42, 0.4),
-        inset 0 0 10px rgba(74, 44, 42, 0.1);
-    background: rgba(255, 255, 255, 0.5);
+        0 0 25px rgba(43, 26, 25, 0.65),
+        inset 0 0 15px rgba(74, 44, 42, 0.2);
+    background: rgba(240, 230, 210, 0.5);
 }
 
 .form-group {
@@ -118,34 +146,42 @@ a:active, .submit-btn:active {
     font-weight: bold;
     margin-bottom: 5px;
     color: var(--accent-color);
+    transition: transform 0.2s ease;
+}
+
+
+.form-group:focus-within label {
+    transform: translateX(4px);
 }
 
 .form-group input, .form-group textarea {
     font-family: var(--font-main);
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #b8a686;
     background-color: #fffdf9;
     color: var(--text-color);
-    border-radius: 3px;
+    border-radius: 4px;
     outline: none;
+    transition: all 0.2s ease;
 }
-
 
 .form-group input:focus, .form-group textarea:focus {
     border-color: var(--main-color);
-    background-color: #fff;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
+
 
 .submit-btn {
     font-family: var(--font-main);
     background-color: var(--main-color);
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.2s, transform 0.1s;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
 }
 
 .submit-btn:hover {
@@ -154,5 +190,15 @@ a:active, .submit-btn:active {
 
 .submit-btn:focus {
     outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+
+aside {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: rgba(215, 197, 160, 0.25);
+    border-left: 4px solid var(--main-color);
+    border-radius: 0 4px 4px 0;
 }
 
