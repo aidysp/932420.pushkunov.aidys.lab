@@ -1,17 +1,12 @@
-
 let userName = prompt("Введите ваше имя:");
-
 
 if (!userName || userName.trim() === "") {
     userName = "Гость";
 }
 
-
 alert(`Привет, ${userName}! Добро пожаловать на сайт историка-реконструктора.`);
 
-
-const artifactAges =;
-
+const artifactAges = [150, 250, 1200, 1500, 2500, 3200, 4100];
 
 function findMax(ages) {
     return Math.max(...ages);
@@ -25,24 +20,16 @@ function calculateSum(ages) {
     return ages.reduce((sum, age) => sum + age, 0);
 }
 
-
 function analyzeYoungArtifacts(ages) {
     let count = 0;
-
     for (let i = 0; i < ages.length; i++) {
         if (ages[i] <= 300) {
             count++;
         }
     }
-    
     const share = (count / ages.length) * 100;
-    
-    return {
-        count: count,
-        share: share
-    };
+    return { count, share };
 }
-
 
 const maxAge = findMax(artifactAges);
 const ancientArtifacts = filterAncientArtifacts(artifactAges);
@@ -50,9 +37,7 @@ const totalAge = calculateSum(artifactAges);
 const averageAge = totalAge / artifactAges.length;
 const youngResults = analyzeYoungArtifacts(artifactAges);
 
-
 alert(`Средний возраст – ${averageAge.toFixed(1)} лет, ${ancientArtifacts.length} артефактов – древние.`);
-
 
 console.log("Исходный массив возрастов артефактов:", artifactAges);
 console.log("Древние артефакты (старше 1000 лет):", ancientArtifacts);
